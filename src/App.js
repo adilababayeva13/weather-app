@@ -1,8 +1,26 @@
-function App() {
+import { routeArr } from './routes'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Navbar from './layouts/navbar'
+
+const App = () => {
   return (
-    <div className="App">
-      <h1>Weather App</h1>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        {routeArr.map((item) => (
+          <Route
+            exact
+            path={item.path}
+            key={item.id}
+            element={
+              <>
+                <Navbar title={item.title} />
+                <item.component />
+              </>
+            }
+          />
+        ))}
+      </Routes>
+    </BrowserRouter>
   )
 }
 

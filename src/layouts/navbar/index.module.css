@@ -1,0 +1,48 @@
+.logo {
+  width: max-content;
+  height: 80px;
+  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-weight: bold;
+  font-size: 32px;
+  color: #f1f6f5;
+}
+.logo img {
+  width: auto;
+  height: 100%;
+}
+
+.profile {
+  width: max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.profile nav {
+  width: max-content;
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.profile nav a {
+  color: #f1f6f5;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+.profile nav a:hover {
+  color: #82c3ec;
+}

@@ -1,0 +1,10 @@
+@import '../../assets/utils/index.scss';
+
+.aside {
+  width: 288px;
+  height: 100%;
+  padding: 0 8px 0 0;
+  max-height: 80vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}

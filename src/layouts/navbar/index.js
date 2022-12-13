@@ -12,13 +12,13 @@ export default function Navbar({ title }) {
   }, [title])
 
   return (
-    <header className={`container`}>
-      <Link className={classes.logo} to={routes.home.path}>
+    <header className={`container ${classes.navbar}`}>
+      <Link to={routes.home.path}>
         <img src={logo} alt="logo" />
         Weather App
       </Link>
       <Search />
-      <div className={classes.profile}>
+      <div>
         <ProfileIcon />
         <nav>
           <Link to={routes.login.path}>Login</Link>

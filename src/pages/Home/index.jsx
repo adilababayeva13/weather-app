@@ -1,5 +1,9 @@
+import Aside from '../../components/Aside'
+
 export default function Home() {
   return (
-    <section>index</section>
+    <main className={`container`}>
+      <Aside />
+    </main>
   )
 }

@@ -1,34 +1,36 @@
 @import '../../assets/utils/index.scss';
 
-.logo {
-  width: max-content;
-  height: 80px;
-  display: block;
-  @include flexWithGap(row, 16px, center);
-  font-weight: bold;
-  font-size: 32px;
-  color: $accent-color-light;
-  img {
-    width: auto;
-    height: 100%;
+.navbar {
+  border-bottom: 1px solid $secondary-color;
+  & > a {
+    width: max-content;
+    height: 80px;
+    display: block;
+    @include flexWithGap(row, 16px, center);
+    font-weight: bold;
+    font-size: 32px;
+    color: $accent-color-light;
+    img {
+      width: auto;
+      height: 100%;
+    }
   }
-}
-
-.profile {
-  width: max-content;
-  height: max-content;
-  @include flexWithGap(row, 16px, center);
-  nav {
+  & > div {
     width: max-content;
     height: max-content;
     @include flexWithGap(row, 16px, center);
-    a {
-      color: $accent-color-light;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      &:hover {
-        color: $accent-color-dark;
+    nav {
+      width: max-content;
+      height: max-content;
+      @include flexWithGap(row, 16px, center);
+      a {
+        color: $accent-color-light;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        &:hover {
+          color: $accent-color-dark;
+        }
       }
     }
   }

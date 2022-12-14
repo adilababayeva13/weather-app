@@ -5,22 +5,35 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 export default function Section() {
-  const { current } = useSelector((state) => state.weather)
+  const { current, query } = useSelector((state) => state.weather)
+  const key = process.env.REACT_APP_MY_KEY
   const [data, setData] = useState(null)
   useEffect(() => {
     ;(async function () {
-      const key = process.env.REACT_APP_MY_KEY
       try {
         const { data } = await axios.get(
           `https://api.openweathermap.org/data/2.5/weather?lat=${current.lat}&lon=${current.lon}&appid=${key}&units=metric`,
         )
         await setData(data)
-        console.log(data)
       } catch {
         console.log('error')
       }
     })()
-  }, [current])
+  }, [current, key])
+  useEffect(() => {
+    ;(async function () {
+      if (query) {
+        try {
+          const { data } = await axios.get(
+            `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${key}&units=metric`,
+          )
+          data && (await setData(data))
+        } catch {
+          console.log('error')
+        }
+      }
+    })()
+  }, [query, key])
   return data ? (
     <section className={classes.section}>
       <div>

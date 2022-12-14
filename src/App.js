@@ -11,8 +11,10 @@ const App = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    latitude && dispatch(setCurrent({ lat: latitude, lon: longitude }))
-  }, [latitude, longitude])
+    latitude &&
+      longitude &&
+      dispatch(setCurrent({ lat: latitude, lon: longitude }))
+  }, [latitude, longitude, dispatch])
   return (
     <BrowserRouter>
       <Routes>

@@ -1,5 +1,5 @@
 import classes from './index.module.scss'
-
+import { AddButton, RemoveButton } from '../button'
 export default function Section() {
   return (
     <section className={classes.section}>
@@ -11,6 +11,8 @@ export default function Section() {
         <ul>
           <li>3.1m/s SSE</li>·<li>Humidity:87%</li>·<li>Visibility:10.0km</li>
         </ul>
+        <AddButton>Add</AddButton>
+        {/* <RemoveButton>Remove</RemoveButton> */}
       </div>
       <figure>
         <img

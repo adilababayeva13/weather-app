@@ -30,7 +30,7 @@
   color: #4b56d2;
 }
 .section > div ul {
-  margin-top: 32px;
+  margin: 32px 0;
   font-size: 18px;
   color: #f1f6f5;
   display: flex;

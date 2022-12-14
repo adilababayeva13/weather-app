@@ -1,0 +1,50 @@
+.section {
+  width: calc(100% - 296px);
+  border-left: 1px solid #4b56d2;
+  padding: 24px;
+  height: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.section > div {
+  width: calc(100% - 200px);
+}
+.section > div > h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f6f5;
+}
+.section > div > span {
+  font-size: 72px;
+  color: #82c3ec;
+  font-weight: bold;
+}
+.section > div p {
+  font-size: 18px;
+  color: #f1f6f5;
+}
+.section > div p:nth-of-type(2) {
+  color: #4b56d2;
+}
+.section > div ul {
+  margin-top: 32px;
+  font-size: 18px;
+  color: #f1f6f5;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: max-content;
+}
+.section figure {
+  width: 200px;
+}
+.section figure img {
+  width: 100%;
+  height: auto;
+}

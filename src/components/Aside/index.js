@@ -3,9 +3,10 @@ import Card from '../card'
 
 export default function Aside() {
   const datum = {
-    name: 'London',
+    name: 'Baku',
+    country: 'AZ',
     temp: 20,
-    weather: 'Sunny',
+    weather: 'clear sky',
     wind: 10,
     humidity: 20,
   }
@@ -15,6 +16,7 @@ export default function Aside() {
       {data.map((item, index) => (
         <Card
           key={`card-${index}`}
+          country={item.country}
           name={item.name}
           temp={item.temp}
           weather={item.weather}

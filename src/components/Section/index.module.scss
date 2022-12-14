@@ -1,0 +1,44 @@
+@import '../../assets/utils/index.scss';
+
+.section {
+  width: calc(100% - 296px);
+  border-left: 1px solid $secondary-color;
+  padding: 24px;
+  height: 100%;
+  min-height: 80vh;
+  @include flexContainer(row, space-between, flex-start);
+  & > div {
+    width: calc(100% - 200px);
+    & > h1 {
+      font-size: 40px;
+      font-weight: bold;
+      color: $accent-color-light;
+    }
+    & > span {
+      font-size: 72px;
+      color: $accent-color-dark;
+      font-weight: bold;
+    }
+    p {
+      font-size: 18px;
+      color: $accent-color-light;
+      &:nth-of-type(2) {
+        color: $secondary-color;
+      }
+    }
+    ul {
+      margin-top: 32px;
+      font-size: 18px;
+      color: $accent-color-light;
+      @include flexWithGap(row, 12px, flex-start);
+      width: max-content;
+    }
+  }
+  figure {
+    width: 200px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

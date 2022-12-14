@@ -16,3 +16,14 @@ export function RemoveButton({ children }) {
     </button>
   )
 }
+
+export function Button({ children, disabled }) {
+  return (
+    <button
+      className={`${classes.container__button} ${disabled && classes.disabled}`}
+      type={'submit'}
+    >
+      {children}
+    </button>
+  )
+}

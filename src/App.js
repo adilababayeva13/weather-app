@@ -1,4 +1,4 @@
-import { routeArr } from './routes'
+import { routeArr, routes } from './routes'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './layouts/navbar'
 
@@ -13,7 +13,9 @@ const App = () => {
             key={item.id}
             element={
               <>
-                <Navbar title={item.title} />
+                {item.path === routes.home.path && (
+                  <Navbar title={item.title} />
+                )}
                 <item.component />
               </>
             }

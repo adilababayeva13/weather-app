@@ -4,6 +4,8 @@ $secondary-color: #4b56d2;
 $accent-color-dark: #82c3ec;
 $accent-color-light: #f1f6f5;
 
+$color-text-primary: #1a1a1c;
+$color-error: #c84b31;
 // mixins
 @mixin flexContainer($direction, $justify, $align) {
   display: flex;

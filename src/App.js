@@ -1,8 +1,18 @@
 import { routeArr, routes } from './routes'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './layouts/navbar'
+import { useEffect } from 'react'
+import { usePosition } from 'use-position'
+import { useDispatch } from 'react-redux'
+import { setCurrent } from './store/weatherSlice'
 
 const App = () => {
+  const { latitude, longitude } = usePosition(true)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    latitude && dispatch(setCurrent({ lat: latitude, lon: longitude }))
+  }, [latitude, longitude])
   return (
     <BrowserRouter>
       <Routes>

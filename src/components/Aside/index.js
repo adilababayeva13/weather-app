@@ -10,10 +10,10 @@ export default function Aside() {
     wind: 10,
     humidity: 20,
   }
-  const data = [datum, datum, datum, datum, datum, datum]
+  const data = [datum, datum, datum, datum, datum, datum, datum, datum, datum]
   return (
     <aside className={classes.aside}>
-      {data.map((item, index) => (
+      {data?.map((item, index) => (
         <Card
           key={`card-${index}`}
           country={item.country}

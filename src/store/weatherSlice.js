@@ -1,9 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
+import jwt from 'jwt-decode'
+
+const token = localStorage.getItem('token')
+const decodedToken = token ? jwt(token) : null
 
 const initialState = {
   current: { lon: '-0.1257', lat: '51.5085' },
   query: null,
-  list: localStorage.getItem('cities')
+  list: decodedToken
+    ? decodedToken.cities
+    : localStorage.getItem('cities')
     ? JSON.parse(localStorage.getItem('cities'))
     : [],
 }
@@ -30,6 +36,12 @@ export const weatherSlice = createSlice({
       localStorage.setItem('cities', JSON.stringify(list))
       state.list = list
     },
+    setList: (state, action) => {
+      let list = [...state.list]
+      list = action.payload
+      localStorage.setItem('cities', JSON.stringify(list))
+      state.list = list
+    },
   },
 })
 
@@ -38,6 +50,7 @@ export const {
   addList,
   removeList,
   setQuery,
+  setList,
 } = weatherSlice.actions
 
 export default weatherSlice.reducer

@@ -33,7 +33,13 @@ const Input = (props) => {
       className={`${classes.container__input} ${error && classes.error_input}`}
     >
       <p>{props.label}</p>
-      <input ref={inputRef} onInput={() => handleError()} {...props} />
+      <input
+        ref={inputRef}
+        onInput={() => handleError()}
+        placeholder={props.placeholder}
+        type={props.type}
+        id={props.id}
+      />
     </label>
   )
 }

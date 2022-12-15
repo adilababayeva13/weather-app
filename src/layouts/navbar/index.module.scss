@@ -19,6 +19,23 @@
     width: max-content;
     height: max-content;
     @include flexWithGap(row, 16px, center);
+    & > div {
+      width: max-content;
+      height: max-content;
+      @include flexWithGap(row, 16px, center);
+      color: $accent-color-light;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+
+      & > p {
+        text-transform: uppercase;
+      }
+      & > span:hover {
+        cursor: pointer;
+        color: $accent-color-dark;
+      }
+    }
     nav {
       width: max-content;
       height: max-content;

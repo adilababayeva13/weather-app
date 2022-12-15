@@ -3,7 +3,9 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   current: { lon: '-0.1257', lat: '51.5085' },
   query: null,
-  list: [],
+  list: localStorage.getItem('cities')
+    ? JSON.parse(localStorage.getItem('cities'))
+    : [],
 }
 
 export const weatherSlice = createSlice({
@@ -19,11 +21,13 @@ export const weatherSlice = createSlice({
     removeList: (state, action) => {
       let list = [...state.list]
       list = list.filter((item) => item !== action.payload)
+      localStorage.setItem('cities', JSON.stringify(list))
       state.list = list
     },
     addList: (state, action) => {
       let list = [...state.list]
       list.push(action.payload)
+      localStorage.setItem('cities', JSON.stringify(list))
       state.list = list
     },
   },

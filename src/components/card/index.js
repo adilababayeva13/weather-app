@@ -27,9 +27,7 @@ export default function Card({ country }) {
   return data ? (
     <div className={classes.card}>
       <CloseIcon onClick={() => dispatch(removeList(country))} />
-      <h2 onClick={() => dispatch(setQuery(country))}>
-        {data?.name}, {data?.sys.country}
-      </h2>
+      <h2 onClick={() => dispatch(setQuery(country))}>{data?.name}</h2>
       <span>{data?.weather[0].description}</span>
       <p>
         <TemperatureIcon /> {data?.main.temp}°C

@@ -1,17 +1,17 @@
 import classes from './index.module.scss'
 import { AddIcon, CloseIcon } from '../../icons'
 
-export function AddButton({ children }) {
+export function AddButton({ children, onClick }) {
   return (
-    <button className={classes.add}>
+    <button onClick={onClick} className={classes.add}>
       {children} <AddIcon />
     </button>
   )
 }
 
-export function RemoveButton({ children }) {
+export function RemoveButton({ children, onClick }) {
   return (
-    <button className={classes.remove}>
+    <button onClick={onClick} className={classes.remove}>
       {children} <CloseIcon />
     </button>
   )

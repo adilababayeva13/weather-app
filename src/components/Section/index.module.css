@@ -26,6 +26,9 @@
   font-size: 18px;
   color: #f1f6f5;
 }
+.section > div p:nth-of-type(1) {
+  text-transform: capitalize;
+}
 .section > div p:nth-of-type(2) {
   color: #4b56d2;
 }

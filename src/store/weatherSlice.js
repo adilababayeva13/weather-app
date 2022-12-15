@@ -16,7 +16,12 @@ export const weatherSlice = createSlice({
     setQuery: (state, action) => {
       state.query = action.payload
     },
-    setList: (state, action) => {
+    removeList: (state, action) => {
+      let list = [...state.list]
+      list = list.filter((item) => item !== action.payload)
+      state.list = list
+    },
+    addList: (state, action) => {
       let list = [...state.list]
       list.push(action.payload)
       state.list = list
@@ -24,6 +29,11 @@ export const weatherSlice = createSlice({
   },
 })
 
-export const { setCurrent, setList, setQuery } = weatherSlice.actions
+export const {
+  setCurrent,
+  addList,
+  removeList,
+  setQuery,
+} = weatherSlice.actions
 
 export default weatherSlice.reducer
